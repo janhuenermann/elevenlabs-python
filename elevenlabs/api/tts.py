@@ -54,7 +54,7 @@ class TTS(API):
         api_key: Optional[str] = None,
         latency: int = 1,
     ) -> Iterator[bytes]:
-        url = f"{api_base_url_v1}/text-to-speech/{voice.voice_id}/stream?optimize_streaming_latency={latency}"
+        url = f"{api_base_url_v1}/text-to-speech/{voice.voice_id}/stream?optimize_streaming_latency={latency}&output_format=pcm_16000"
         data = dict(
             text=text,
             model_id=model.model_id,
